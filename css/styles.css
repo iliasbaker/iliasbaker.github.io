@@ -3,6 +3,6 @@
   color: #fff;
 }
 .nightBar {
-  background-color: #4E4E5B;
-  color: #fff;
+  background-color: #4E4E5B !important;
+  color: #fff !important;
 }
