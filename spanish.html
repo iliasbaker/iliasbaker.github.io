@@ -13,12 +13,27 @@
 
     </div>
     <div class="w3-container">
-      <h3>Search a <span id="langFull"></span> word...</h3>
+      <h3>Search a<span id="optN"></span> <span id="langFull"></span> word...</h3>
       <input type="text" id="boxu" class="w3-input nightMode" autofocus="">
     </div>
     <script>
     var langShort = "ES";
     var langFull = "Spanish";
+    var firstChar = langFull.charAt(0);
+    switch(firstChar) {
+      case "a":
+      case "A":
+      case "e":
+      case "E":
+      case "i":
+      case "I":
+      case "o":
+      case "O":
+      case "u":
+      case "U":
+        document.getElementById("optN").innerHTML = "n";
+        break;
+    }
     document.getElementById("title").innerHTML = "[" + langShort + "] Multisearch";
     document.getElementById("langFull").innerHTML = langFull;
     document.getElementById("boxu").onkeydown = function(e) {searchy(e)};

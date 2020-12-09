@@ -17,8 +17,8 @@
       <input type="text" id="boxu" class="w3-input nightMode" autofocus="">
     </div>
     <script>
-    var langShort = "RU";
-    var langFull = "Russian";
+    var langShort = "HY";
+    var langFull = "Armenian";
     var firstChar = langFull.charAt(0);
     switch(firstChar) {
       case "a":
@@ -43,9 +43,6 @@
         {
           var q = encodeURIComponent(document.getElementById("boxu").value);
           window.open("https://www.google.com/search?tbm=isch&q=" + q);
-  				window.open("https://forvo.com/word/" + q + "/#ru");
-  				window.open("https://es.glosbe.com/ru/en/" + q);
-  				window.open("https://en.wiktionary.org/wiki/" + q + "#Russian");
           document.getElementById("boxu").value = "";
         }
       }
