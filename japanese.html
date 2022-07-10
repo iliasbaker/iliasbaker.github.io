@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title id="title"></title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body class="nightMode">
+    <div id="nav-placeholder">
+
+    </div>
+    <div class="w3-container">
+      <h3>Search a<span id="optN"></span> <span id="langFull"></span> word...</h3>
+      <input type="text" id="boxu" class="w3-input nightMode" autofocus="">
+    </div>
+    <script>
+    var langShort = "JP";
+    var langFull = "Japanese";
+    var firstChar = langFull.charAt(0);
+    switch(firstChar) {
+      case "a":
+      case "A":
+      case "e":
+      case "E":
+      case "i":
+      case "I":
+      case "o":
+      case "O":
+      case "u":
+      case "U":
+        document.getElementById("optN").innerHTML = "n";
+        break;
+    }
+    document.getElementById("title").innerHTML = "[" + langShort + "] Multisearch";
+    document.getElementById("langFull").innerHTML = langFull;
+    document.getElementById("boxu").onkeydown = function(e) {searchy(e)};
+    function searchy(e)
+      {
+        if (e.which == 13)
+        {
+          var q = encodeURIComponent(document.getElementById("boxu").value);
+          window.open("https://forvo.com/word/%E5%8F%82%E3%82%8B/" + q + "#ja");
+          window.open("https://jisho.org/search/" + q);
+          window.open("https://tangorin.com/sentences?search=" + q);
+          window.open("https://tangorin.com/words?search=" + q);
+          window.open("https://www.japandict.com/?s=" + q + "&lang=eng");
+          document.getElementById("boxu").value = "";
+        }
+      }
+    </script>
+    <script>
+      $(function(){
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+  </body>
+</html>
